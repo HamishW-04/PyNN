@@ -67,10 +67,9 @@ class NeuralNetwork:
 
         return copy
 
-    def Save(self, fileName:str, path:str = "Networks"):
-        path = Path(path)
-        path.mkdir(parents=True, exist_ok=True)
-        filePath = path / fileName
+    def Save(self, folderpath:Path, name:str):
+        folderpath.mkdir(parents=True, exist_ok=True)
+        filePath = folderpath / (name + ".json")
 
         data = {
             "inputSize": self.inputSize,
@@ -91,8 +90,8 @@ class NeuralNetwork:
             json.dump(data, file)
 
     @classmethod
-    def Load(cls, fileName:str) -> NeuralNetwork:
-        with open(fileName, "r") as file:
+    def Load(cls, filePath:Path) -> NeuralNetwork:
+        with open(filePath, "r") as file:
             data = json.load(file)
             network = cls(data["inputSize"], data["outputSize"], data["hiddenLayers"], AF[data["outputActivation"]])
 

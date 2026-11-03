@@ -23,5 +23,4 @@ dist/
 Thumbs.db
 
 # Saved neural networks / experiments
-Test Runs/
-Test Networks/
+tests/networks
