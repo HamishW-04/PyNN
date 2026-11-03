@@ -22,10 +22,6 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Trading stuff
-Bars Data/
-Long Bars/
-src/trading/
-
 # Saved neural networks / experiments
 Test Runs/
+Test Networks/

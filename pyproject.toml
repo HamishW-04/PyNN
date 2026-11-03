@@ -1,5 +1,28 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "pynn"
 version = "0.1.0"
+description = "A Python library for creating and training neural networks."
+readme = "README.md"
 requires-python = ">=3.14"
-dependencies = ["numpy"]
+license = "MIT"
+
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "networkx",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "build",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pynn*"]
+exclude = ["tests*"]
