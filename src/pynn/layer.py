@@ -37,13 +37,13 @@ class Layer:
         self.weights = np.hstack((self.weights, newWeights))
         self.inputSize += 1
 
-    def RemoveOutput(self, neuronID):
+    def RemoveOutput(self, neuronID:int):
         self.outputSize -= 1
 
         self.weights = np.delete(self.weights, neuronID, axis=0)
         self.biases = np.delete(self.biases, neuronID, axis=0)
 
-    def RemoveInput(self, neuronID):
+    def RemoveInput(self, neuronID:int):
         self.inputSize -= 1
 
         self.weights = np.delete(self.weights, neuronID, axis=1)
